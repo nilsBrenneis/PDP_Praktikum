@@ -10,7 +10,7 @@ import java.util.concurrent.BlockingQueue;
  *
  * @author nils
  */
-public class PoolThread extends Thread {
+class PoolThread extends Thread {
 
     private BlockingQueue<Runnable> taskQueue = null;
     private boolean isStopped = false;
@@ -37,7 +37,7 @@ public class PoolThread extends Thread {
         this.interrupt(); //break pool thread out of dequeue() call.
     }
 
-    public synchronized boolean isStopped() {
+    private synchronized boolean isStopped() {
         return isStopped;
     }
 }

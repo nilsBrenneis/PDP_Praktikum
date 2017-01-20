@@ -23,7 +23,7 @@ public class PrimeResults {
         sem.release();
     }
 
-    public Iterator<Integer> getNPrimes(int n) throws InterruptedException {
+    public Iterator getNPrimes(int n) throws InterruptedException {
         sem.acquire(n);
 
         ArrayList<Integer> nPrimes = new ArrayList<Integer>();
@@ -31,8 +31,6 @@ public class PrimeResults {
             nPrimes.add(primesList.poll());
             primesList.remove(i);
         }
-
-        Iterator itr = nPrimes.iterator();
-        return itr;
+        return nPrimes.iterator();
     }
 }

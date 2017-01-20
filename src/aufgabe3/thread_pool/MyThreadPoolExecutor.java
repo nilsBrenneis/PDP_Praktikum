@@ -10,7 +10,7 @@ import java.util.concurrent.*;
 public class MyThreadPoolExecutor {
 
     private BlockingQueue<Runnable> taskQueue = null;
-    private List<PoolThread> threads = new ArrayList<PoolThread>();
+    private final List<PoolThread> threads = new ArrayList<>();
     private boolean isStopped = false;
 
     public MyThreadPoolExecutor(int noOfThreads, int maxNoOfTasks) {
