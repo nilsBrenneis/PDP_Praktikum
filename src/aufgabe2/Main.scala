@@ -1,7 +1,12 @@
+package aufgabe2
+
+/**
+  * Created by nils on 20.01.17.
+  */
 object Main {
     def main(args: Array[String]) {
         val primzahlen = Lst.range(2,100).filter(isPrime)
-        println("Die ersten 10 Primzahlen:\n" + primzahlen.takeAsList(10))
+     /*   println("Die ersten 10 Primzahlen:\n" + primzahlen.takeAsList(10))
         println("\nSumme (foldLeft): " + primzahlen.foldLeft(0)(_+_))
         var s = 0
         for (x <- primzahlen) {
@@ -21,8 +26,10 @@ object Main {
         } yield (x,y)
         println();
         for ((x,y) <- products) printf("%2d * %2d < 30%n", x, y)
+         */
     }
-    
+
     def isPrime(n: Int): Boolean =
       n == 2 || n % 2 == 1 && Lst.range(3, n-1, 2).forall(n % _ != 0)
+
 }
