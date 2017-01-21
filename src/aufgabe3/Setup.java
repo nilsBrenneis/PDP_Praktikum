@@ -11,9 +11,9 @@ public class Setup {
 		final int maxRange = 10000;
 		final int segments = 10;
 		final int segmentSize = maxRange / segments;
-		final int noOfThreads = 5;
-		final int maxNoOfTasks = 50;
-		final int getNPrimes = 5;
+		final int noOfThreads = 4;
+		final int maxNoOfTasks = 10;
+		final int noOfPrimes = 5;
 
         MyThreadPoolExecutor mtpe = new MyThreadPoolExecutor(noOfThreads, maxNoOfTasks);
         PrimeResults pr = new PrimeResults();
@@ -39,7 +39,7 @@ public class Setup {
 			
 		} // end while
 
-        Iterator<Integer> it = pr.getNPrimes(getNPrimes);
+        Iterator<Integer> it = pr.getNPrimes(noOfPrimes);
 		while (it.hasNext()) {
 		    System.out.println(it.next());
         }

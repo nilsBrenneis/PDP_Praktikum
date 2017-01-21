@@ -7,8 +7,7 @@ package aufgabe3.thread_pool;
 import java.util.concurrent.BlockingQueue;
 
 /**
- *
- * @author nils
+ * Created by nils on 21.02.13.
  */
 class PoolThread extends Thread {
 
