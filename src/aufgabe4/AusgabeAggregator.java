@@ -21,8 +21,8 @@ public class AusgabeAggregator {
         AusgabeAggregator ausgA = new AusgabeAggregator();
         Konsolenausgabe konsA = new Konsolenausgabe();
 
-        append("Was ist das für 1 ");
-        append("life?");
+        append("Hallo ");
+        append("Welt");
 
         System.out.println(System.lineSeparator() +  marker + "LetterCounter" + marker);
         LetterCounter lc = new LetterCounter(konsA);
@@ -34,7 +34,7 @@ public class AusgabeAggregator {
         uc.print(myToString());
 
         System.out.println(System.lineSeparator() + marker + "WordCounter" + marker);
-        WordCounter wc = new WordCounter("life", konsA);
+        WordCounter wc = new WordCounter("Hallo", konsA);
         wc.print(myToString());
         System.out.println(wc.getWordCount());
 
