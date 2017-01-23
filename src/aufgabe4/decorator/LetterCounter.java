@@ -1,18 +1,16 @@
 package aufgabe4.decorator;
 
-import aufgabe4.KonsAuInterface;
-import aufgabe4.Konsolenausgabe;
+import aufgabe4.Ausgabe;
 
 /**
  * Created by nils on 20.01.17.
  */
-public class LetterCounter implements KonsAuInterface {
+public class LetterCounter extends Dekorator {
 
-    private final Konsolenausgabe k;
     private int count = 0;
 
-    public LetterCounter(Konsolenausgabe k) {
-        this.k = k;
+    public LetterCounter(Ausgabe k) {
+        super(k);
     }
 
     private void countLetters(String s) {
@@ -26,6 +24,6 @@ public class LetterCounter implements KonsAuInterface {
     @Override
     public void print(String s) {
         countLetters(s);
-        k.print(s);
+        super.print(s);
     }
 }

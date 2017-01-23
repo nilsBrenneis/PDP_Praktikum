@@ -1,19 +1,15 @@
 package aufgabe4.decorator;
 
-import aufgabe4.KonsAuInterface;
-import aufgabe4.Konsolenausgabe;
+import aufgabe4.Ausgabe;
 
 /**
  * Created by nils on 20.01.17.
  */
-public class UpperCase implements KonsAuInterface {
-
-    private final Konsolenausgabe k;
-
-    public UpperCase(Konsolenausgabe k) { this.k = k; }
+public class UpperCase extends Dekorator {
+    public UpperCase(Ausgabe k) { super(k); }
 
     private String toUpperCase(String s) { return s.toUpperCase(); }
 
     @Override
-    public void print(String s) { k.print(toUpperCase(s)); }
+    public void print(String s) { super.print(toUpperCase(s)); }
 }
